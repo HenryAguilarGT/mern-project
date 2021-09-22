@@ -12,7 +12,7 @@ export default function topbar() {
                 <ul className="topList">
                     <li className="topListItem">Home</li>
                     <li className="topListItem">About</li>
-                    <li className="topListItem">Contact</li>
+                    <li className="topListItem">Contact Us</li>
                     <li className="topListItem">Write</li>
                     <li className="topListItem">Logout</li>
                 </ul>
