@@ -1,0 +1,89 @@
+.settings{
+    margin-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+}
+
+/* .settingsImg{
+    width: 100%;
+    height: auto;
+} */
+
+.settingsProfilePic img{
+    width: 75px;
+    height: auto;
+    object-fit: cover;
+}
+
+.settingsPictureProfIcon{
+    width: 35px;
+    height: 35px;
+    background-color: cadetblue;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.settingsWrapper{
+    flex: 9;
+    padding: 20px;
+}
+
+.settingsTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settingsUpdateTitle{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: indianred;
+    cursor: pointer;
+}
+
+.settingsDeleteTitle{
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.settingsForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsForm > label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.settingsForm > input{
+    color:#545454;
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.settingsSubmit{
+    width: 150px;
+    align-self: center;
+    border: none;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.settingsProfilePic{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
