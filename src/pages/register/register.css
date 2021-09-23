@@ -1,0 +1,53 @@
+.register{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+    background-size: cover;
+}
+
+.registerTitle{
+    font-size: 50px;
+}
+
+.registerForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 30%;
+    padding: 10px;
+}
+
+.registerForm > label{
+    margin: 10px 0;
+}
+
+.register >input{
+    padding: 5px;
+    border: none;
+}
+
+.registerButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: lightskyblue;
+    border: none;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.registerRegisterButton{
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
