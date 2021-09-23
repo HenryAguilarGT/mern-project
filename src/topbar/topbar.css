@@ -12,6 +12,8 @@
     align-items: center;
     font-family: 'Baloo 2', cursive;
     z-index: 1000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .topLeft, .topRight{
