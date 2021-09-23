@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     font-family: 'Baloo 2', cursive;
+    z-index: 1000;
 }
 
 .topLeft, .topRight{
