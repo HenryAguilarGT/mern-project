@@ -5,26 +5,38 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import "./home.css";
 import axios from "axios"
 
-export default function Home() {
-    const [posts,setPosts] = useState([]);
-
-    useEffect(()=>{
-        const fetchPosts = async () => {
-            axios.get("/posts")
-            const res = await axios.get("/posts") 
-            // console.log(res)
-            setPosts(res.data);
-        };
-        fetchPosts();
-    },[])
+export default function Home(){
     return (
-        <>
-            <Header/>
-                <div className="home">
-                    <Posts posts/>
-                    <Sidebar/>
-                </div>
-        </>
-    )
+    <>
+        <Header/>
+        <div className="home">
+            <Posts/>
+            <Sidebar/>
+        </div>
+    </>
+    );
 }
+
+// export default function Home() {
+//     const [posts,setPosts] = useState([]);
+
+//     useEffect(()=>{
+//         const fetchPosts = async () => {
+//             axios.get("/posts")
+//             const res = await axios.get("/posts") 
+//             // console.log(res)
+//             setPosts(res.data);
+//         };
+//         fetchPosts();
+//     },[])
+//     return (
+//         <>
+//             <Header/>
+//                 <div className="home">
+//                     <Posts Home/>
+//                     <Sidebar/>
+//                 </div>
+//         </>
+//     )
+// }
 
