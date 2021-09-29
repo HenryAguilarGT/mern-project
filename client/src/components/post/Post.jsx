@@ -1,33 +1,36 @@
-import "./post.css"
+import "./post.css";
+import { Link } from "react-router-dom";
 
-export default function Post() {
+export default function Post({ post }) {
     return (
         <div className="post">
-            <img className="postImg" src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" />
+            {post.photo && (
+                <img
+                className="postImg"
+                src={post.photo}
+                alt=""
+                />
+            )}
+            <img className="postImg" src="" alt="" />
             <div className="postInfo">
                 <div className="postCats">
-                    <span className="postCat">Profession</span>
-                    <span className="postCat">Education</span>
+                    <span className="postCat">
+                        {post.categories.map((c) => (
+                            <span className="postCat">{c.name}</span>
+                    ))}
+                    </span>
                 </div>
-                <span className="postTitle">
-                    Lorem Ipsum
-                </span>
+                <Link to={`/post/${post._id}`} className="link">
+                    <span className="postTitle">{post.title}</span>
+                </Link>
                 
                 <span className="postDate">
-                    1 hour ago
+                    {new Date(post.createdAt).toDateString()}
                 </span>
             </div>
             <p className="postDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus 
-                atque quos, perferendis illo necessitatibus fuga pariatur ut iure in a cum ab deleniti! 
-                Facilis non laudantium sit pariatur voluptas?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus 
-                atque quos, perferendis illo necessitatibus fuga pariatur ut iure in a cum ab deleniti! 
-                Facilis non laudantium sit pariatur voluptas?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus 
-                atque quos, perferendis illo necessitatibus fuga pariatur ut iure in a cum ab deleniti! 
-                Facilis non laudantium sit pariatur voluptas?
-                </p>
+                {post.description}
+            </p>
         </div>
     );
 }

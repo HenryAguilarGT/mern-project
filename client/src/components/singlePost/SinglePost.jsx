@@ -1,29 +1,45 @@
-import "./singlePost.css"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import "./singlePost.css";
 
 export default function SinglePost() {
+    const location = useLocation();
+    // console.log(location)
+    const path = location.pathname.split("/")[2];
+    const [post, setPost] = useState({})
+
+    useEffect(() => {
+        const getPost = async () => {
+            const res = await axios.get("/posts/" + path);
+            setPost(res.data)
+        };
+        getPost()
+    }, [path]);
+
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
-                <img className="singlePostImg" src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" />
+                {post.photo &&
+                    <img className="singlePostImg" 
+                        src={post.photo}
+                        alt="" 
+                    />
+                }
+                
             <h1 className="singlePostTitle">
-                Single Post Page!
+                {post.title}
                 <div className="singlePostEdit">
                     <i className="singlePostIcon fas fa-edit"></i>
                     <i className="singlePostIcon fas fa-trash-alt"></i>
                 </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="singlePostAutor">Author: <b>Henry Belmonte </b></span>
-                    <span className="singlePostDate">1 hour ago</span>
+                    <span className="singlePostAutor">Author: <b>{post.username} </b></span>
+                    <span className="singlePostDate">{new Date(post.createdAt).toDateString()}</span>
                 </div>
                 <p className="singlePostDesc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce odio erat, 
-                    elementum eu tincidunt non, pharetra vel est. Vivamus dui tortor, finibus non molestie vel, 
-                    porta et libero. Ut dictum elementum leo sed molestie. Ut maximus eget diam at rhoncus. 
-                    Phasellus bibendum, felis nec commodo viverra, enim metus feugiat nunc, et aliquam mi mi et turpis. 
-                    Nunc pulvinar mollis accumsan. Nam porta sagittis quam, at aliquam leo mattis id. 
-                    Donec interdum ligula egestas massa aliquet rhoncus. Aenean placerat molestie erat sit amet maximus. 
-                    Curabitur rutrum nisl est. 
+                    {post.description}
                 </p>
             </div>
         </div>
